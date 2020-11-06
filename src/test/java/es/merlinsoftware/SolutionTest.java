@@ -26,28 +26,6 @@ public class SolutionTest {
     @InjectMocks
     Solution solution;
     
-    
-    @BeforeEach
-    public void setUpData() {
-        ProductStock productStock = new ProductStock(1L,400000L);
-        ProductStock productStock2 = new ProductStock(2L,200000L);
-        ProductStock productStock3 = new ProductStock(3L,700000L);
-
-        List<ProductStock> productsStockInformation = new ArrayList<>();
-        productsStockInformation.add(productStock2);
-        productsStockInformation.add(productStock);
-        productsStockInformation.add(productStock3);
-
-        List<ProductSales> productsSalesInformation = new ArrayList<>();
-        ProductSales productSales = new ProductSales(1L, 20d);
-        ProductSales productSales1 = new ProductSales(2L, 30d);
-        ProductSales productSales2 = new ProductSales(3L, 10d);
-
-        productsSalesInformation.add(productSales);
-        productsSalesInformation.add(productSales1);
-        productsSalesInformation.add(productSales2);
-    }
-    
     @Test(expected = IllegalArgumentException.class)
     public void sortProductsByScores_throwExceptionWhen_productStockListIsEmpty(){
         List<ProductSales> sales = new ArrayList<>();
